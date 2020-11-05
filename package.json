@@ -1,0 +1,45 @@
+{
+  "name": "bfx-facs-grc-slack",
+  "version": "1.0.0",
+  "private": false,
+  "description": "Bitfinex Slack Fac",
+  "author": {
+    "name": "Ezequiel Wernicke",
+    "email": "ezequiel.wernicke@bitfinex.com"
+  },
+  "keywords": [
+    "bitfinex",
+    "Slack",
+    "Logs"
+  ],
+  "dependencies": {
+    "bfx-facs-base": "git+https://github.com/bitfinexcom/bfx-facs-base.git"
+  },
+  "devDependencies": {
+    "standard": "^14.3.1"
+  },
+  "engine": {
+    "node": ">=8.0"
+  },
+  "main": "index.js",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bitfinexcom/bfx-facs-grc-slack.git"
+  },
+  "homepage": "https://github.com/bitfinexcom/bfx-facs-grc-slack",
+  "maintainers": [
+    {
+      "name": "Ezequiel Wernicke",
+      "email": "<ezequiel.wernicke@bitfinex.com>"
+    },
+    {
+      "name": "prdn",
+      "email": "paolo@bitfinex.com"
+    }
+  ],
+  "scripts": {
+    "lint": "standard",
+    "lintFix": "standard --fix index.js"
+  }
+}
