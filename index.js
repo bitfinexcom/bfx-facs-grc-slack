@@ -1,5 +1,6 @@
 'use strict'
 
+const util = require('util')
 const Base = require('bfx-facs-base')
 
 class GrcSlack extends Base {
@@ -13,7 +14,7 @@ class GrcSlack extends Base {
     if (opts.conf) this.conf = opts.conf
   }
 
-  message (message, reqChannel) {
+  message (reqChannel, message) {
     if (!this.conf.enable) return false
     const slack = this.conf
     const worker = slack.worker || 'rest:ext:slack'
@@ -31,15 +32,18 @@ class GrcSlack extends Base {
       { timeout: 10000 })
   }
 
-  logError (err, notes, reqChannel) {
+  logError (reqChannel, err, ...extra) {
     const parseError = e => {
       if (err instanceof Error) return e.stack
       return e
     }
     const error = parseError(err)
-    const extra = (notes) ? `Notes: ${notes}, ` : ''
-    const message = `${extra}Error: ${error}`
-    return this.message(message, reqChannel)
+
+    const extraP = (extra.length)
+      ? `Extra: ${util.format(...extra)}, `
+      : ''
+    const message = `${extraP}Error: ${error}`
+    return this.message(reqChannel, message)
   }
 }
 
