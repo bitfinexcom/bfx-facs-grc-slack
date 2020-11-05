@@ -15,7 +15,7 @@ class GrcSlack extends Base {
   }
 
   message (reqChannel, message) {
-    if (!this.conf.enable) return false
+    if (!this.conf.enable) return Promise.resolve(false) // Add promise to keep consistency between returns
     const slack = this.conf
     const worker = slack.worker || 'rest:ext:slack'
     const maxLength = slack.max_length || 1024
