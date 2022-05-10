@@ -40,7 +40,7 @@ class GrcSlack extends Base {
     const error = parseError(err)
 
     const extraP = (extra.length)
-      ? `Extra: ${util.format(...extra)}, `
+      ? `Extra: ${util.format(...extra.map(el => typeof el === 'object' ? util.inspect(el, { depth: 10 }) : el))}, `
       : ''
     const message = `${extraP}Error: ${error}`
     return this.message(reqChannel, message)
