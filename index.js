@@ -33,7 +33,7 @@ class GrcSlack extends Base {
   }
 
   logError (reqChannel, err, ...extra) {
-    const error = err instanceof Error ? err.stack : err
+    const error = err instanceof Object ? util.inspect(err, { depth: 10 }) : err
     const extraP = extra.length
       ? `Extra: ${util.format(...extra.map(el => typeof el === 'object' ? util.inspect(el, { depth: 10 }) : el))}, `
       : ''
