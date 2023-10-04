@@ -33,17 +33,13 @@ class GrcSlack extends Base {
   }
 
   logError (reqChannel, err, ...extra) {
-    const parseError = e => {
-      if (err instanceof Error) return e.stack
-      return e
-    }
-    const error = parseError(err)
-
-    const extraP = (extra.length)
+    const error = err instanceof Object ? util.inspect(err, { depth: 10 }) : err
+    const extraP = extra.length
       ? `Extra: ${util.format(...extra.map(el => typeof el === 'object' ? util.inspect(el, { depth: 10 }) : el))}, `
       : ''
-    const message = `${extraP}Error: ${error}`
-    return this.message(reqChannel, message)
+    const errTag = err instanceof Error ? '' : 'Error:'
+
+    return this.message(reqChannel, `${extraP}${errTag} ${error}`)
   }
 }
 
