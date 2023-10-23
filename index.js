@@ -37,9 +37,9 @@ class GrcSlack extends Base {
     const extraP = extra.length
       ? `Extra: ${util.format(...extra.map(el => typeof el === 'object' ? util.inspect(el, { depth: 10 }) : el))}, `
       : ''
-    const errTag = err instanceof Error ? '' : 'Error:'
+    const errTag = err instanceof Error ? '' : 'Error: '
 
-    return this.message(reqChannel, `${extraP}${errTag} ${error}`)
+    return this.message(reqChannel, `${extraP}${errTag}${error}`)
   }
 }
 
