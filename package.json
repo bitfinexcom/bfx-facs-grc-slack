@@ -13,7 +13,7 @@
     "Logs"
   ],
   "dependencies": {
-    "bfx-facs-base": "git+https://github.com/bitfinexcom/bfx-facs-base.git"
+    "@bitfinex/bfx-facs-base": "git+https://github.com/bitfinexcom/bfx-facs-base.git"
   },
   "devDependencies": {
     "standard": "^14.3.1"

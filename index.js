@@ -1,7 +1,7 @@
 'use strict'
 
 const util = require('util')
-const Base = require('bfx-facs-base')
+const Base = require('@bitfinex/bfx-facs-base')
 
 class GrcSlack extends Base {
   constructor (caller, opts, ctx) {
