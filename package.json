@@ -1,5 +1,5 @@
 {
-  "name": "bfx-facs-grc-slack",
+  "name": "@bitfinex/bfx-facs-grc-slack",
   "version": "1.0.0",
   "private": false,
   "description": "Bitfinex Slack Fac",
