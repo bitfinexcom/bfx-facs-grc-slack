@@ -1,6 +1,6 @@
 {
   "name": "@bitfinex/bfx-facs-grc-slack",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": false,
   "description": "Bitfinex Slack Fac",
   "author": {
@@ -13,7 +13,7 @@
     "Logs"
   ],
   "dependencies": {
-    "@bitfinex/bfx-facs-base": "^2.0.0"
+    "@bitfinex/bfx-facs-base": "git+https://github.com/bitfinexcom/bfx-facs-base.git#v2.0.0"
   },
   "devDependencies": {
     "@bitfinex/lint-js": "^1.1.0"
